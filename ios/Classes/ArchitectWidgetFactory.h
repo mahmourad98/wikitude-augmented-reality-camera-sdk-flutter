@@ -1,3 +1,22 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5259333d44f807d187ab475f09a212014232d67829196c2b4540cda5363942e3
-size 663
+/******************************************************************************
+ * File: ArchitectWidgetFactory.h
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2019-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#import <Foundation/Foundation.h>
+
+#import <Flutter/Flutter.h>
+
+NS_ASSUME_NONNULL_BEGIN
+
+@interface ArchitectWidgetFactory : NSObject <FlutterPlatformViewFactory>
+
+- (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar>*)registrar;
+
+@end
+
+NS_ASSUME_NONNULL_END

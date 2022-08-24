@@ -1,3 +1,45 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:f6c908ed1309d77a5b6ff6e90935014246630c513ac64a9e7ba5fd6c54ecfa43
-size 1454
+/******************************************************************************
+ * File: CameraRenderingParameters.hpp
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#ifndef CameraRenderingParameters_hpp
+#define CameraRenderingParameters_hpp
+
+#include "CameraPosition.hpp"
+
+namespace wikitude::sdk {
+
+    class WT_EXPORT_API CameraRenderingParameters {
+    public:
+        CameraRenderingParameters()
+            : _cameraToRenderSurfaceRotation(0)
+            , _cameraPosition(sdk::CameraPosition::Back) {
+            /* Intentionally Left Blank */
+        }
+
+        CameraRenderingParameters(float cameraToRenderSurfaceRotation_, sdk::CameraPosition cameraPosition_)
+            : _cameraToRenderSurfaceRotation(cameraToRenderSurfaceRotation_)
+            , _cameraPosition(cameraPosition_) {
+            /* Intentionally Left Blank */
+        }
+
+        float getCameraToRenderSurfaceRotation() const {
+            return _cameraToRenderSurfaceRotation;
+        }
+
+        sdk::CameraPosition getCameraPosition() const {
+            return _cameraPosition;
+        }
+
+    private:
+        float _cameraToRenderSurfaceRotation;
+        sdk::CameraPosition _cameraPosition;
+    };
+}
+
+#endif /* CameraRenderingParameters_hpp */

@@ -1,3 +1,1 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e23c52cdfe35f57221c35e5e673bc21703b0604f2725c876816b6c43f925cbaf
-size 49
+WikitudeSDK filter=lfs diff=lfs merge=lfs -text

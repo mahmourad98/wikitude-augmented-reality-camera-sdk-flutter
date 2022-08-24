@@ -1,3 +1,29 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:3c83d8803f2cc6283866038b3dca9778e1e777a162c249993462436a1e3f9964
-size 796
+/******************************************************************************
+ * File: RenderingPluginModule.hpp
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2018-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#ifndef RenderingPluginModule_hpp
+#define RenderingPluginModule_hpp
+
+#ifdef __cplusplus
+
+#include "PluginModule.hpp"
+#include "CompilerAttributes.hpp"
+
+
+namespace wikitude::sdk {
+
+        class WT_EXPORT_API RenderingPluginModule : public PluginModule {
+        public:
+            virtual ~RenderingPluginModule() = default;
+        };
+}
+
+#endif /* __cplusplus */
+
+#endif /* RenderingPluginModule_hpp */

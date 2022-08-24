@@ -1,3 +1,35 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:fb928d16fabfbf70824ebe0c5b52a2066d36b56b5ba810a7a0483d1711c95896
-size 1098
+/******************************************************************************
+ * File: ObjectTrackingPluginModule.hpp
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2018-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#ifndef ObjectTrackingPluginModule_hpp
+#define ObjectTrackingPluginModule_hpp
+
+#ifdef __cplusplus
+
+#include "State.hpp"
+#include "CompilerAttributes.hpp"
+#include "TrackingPluginModule.hpp"
+
+
+namespace wikitude::sdk {
+
+        class ManagedCameraFrame;
+        class ObjectTracker;
+        class WT_EXPORT_API ObjectTrackingPluginModule : public TrackingPluginModule {
+        public:
+            virtual ~ObjectTrackingPluginModule() = default;
+
+            virtual universal_sdk::ObjectState getTrackingState(sdk::ObjectTracker& objectTracker_) const = 0;
+            virtual sdk::Matrix4 getViewMatrix() const = 0;
+        };
+}
+
+#endif /* __cplusplus */
+
+#endif /* ObjectTrackingPluginModule_hpp */

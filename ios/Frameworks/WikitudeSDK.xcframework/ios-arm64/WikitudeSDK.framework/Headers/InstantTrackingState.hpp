@@ -1,3 +1,39 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5ca834e04c69ed127e531c49fc1b54fb96b8b0e293466ec964be18e8df7635e8
-size 1353
+/******************************************************************************
+ * File: InstantTrackingState.hpp
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2017-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#ifndef InstantTrackingState_hpp
+#define InstantTrackingState_hpp
+
+#ifdef __cplusplus
+
+#include "CompilerAttributes.hpp"
+
+
+namespace wikitude::sdk {
+    
+        /** @addtogroup InstantTracking
+         *  @{
+         */
+        /** @enum InstantTrackingState
+         *  @brief An enum indicating the current state in which an instant tracker is.
+         */
+        enum class WT_EXPORT_API InstantTrackingState {
+            /** @brief Initializing indicates that the instant tracker is in initialization state, which allows the origin of the tracking scene to be set, as well as the device height above ground.
+             */
+            Initializing,
+            /** @brief Tracking indicates that the instant tracker is in tracking state, which means that the current scene is being tracked and augmentations can be placed.
+             */
+            Tracking
+        };
+        /** @}*/
+}
+
+#endif /* __cplusplus */
+
+#endif /* InstantTrackingState_hpp */

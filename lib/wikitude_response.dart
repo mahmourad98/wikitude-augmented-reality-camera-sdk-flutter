@@ -1,3 +1,16 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:b64e0c87658ded3bb527ebe1b752038964c8bca18f0b4716a3e2ca0d4dd49001
-size 518
+/******************************************************************************
+ * File: wikitude_response.dart
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2019-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+class WikitudeResponse {
+
+  bool success;
+  String message;
+
+  WikitudeResponse({required this.success, required this.message});
+}

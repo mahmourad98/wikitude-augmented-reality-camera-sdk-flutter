@@ -1,3 +1,43 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:65432ea41cca228a5245afaafbd0229d0059f9904a5fbcb4e6470b694bcbabd3
-size 865
+group 'com.wikitude.wikitude_plugin'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.2.2'
+    }
+}
+
+rootProject.allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        flatDir {
+            dirs project(':augmented_reality_plugin_wikitude').file('wikitudesdk')
+        }
+    }
+}
+
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 31
+
+    defaultConfig {
+        minSdkVersion 23
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    lintOptions {
+        disable 'InvalidPackage'
+    }
+}
+
+dependencies {
+    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.google.ar:core:1.29.0'
+    implementation(name:'wikitudesdk', ext:'aar')
+}

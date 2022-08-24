@@ -1,3 +1,23 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e8a6bcd13716b32b2866c88fb75c4d32cd873e90d5a8765d8dac4936b41558fc
-size 847
+/******************************************************************************
+ * File: WikitudePluginResponse.m
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2019-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#import "WikitudePluginResponse.h"
+
+@implementation WikitudePluginResponse
+
++ (NSString*)createJSONStringFromDictionary:(NSDictionary*)dictionary
+{
+    NSError *serializationError;
+    NSData *responseData = [NSJSONSerialization dataWithJSONObject:dictionary options:NSJSONWritingPrettyPrinted error:&serializationError];
+    NSString* JSONString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
+
+    return JSONString;
+}
+
+@end

@@ -1,3 +1,19 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:20de84ec3e389667e6dc676ceceb84649e4bbff3096dc1b10e066aa230cd2f9d
-size 673
+/******************************************************************************
+ * File: WikitudePlugin.h
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2019-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#import <Flutter/Flutter.h>
+
+#import <WikitudeSDK/WikitudeSDK.h>
+
+@interface WikitudePlugin : NSObject<FlutterPlugin>
+
++ (WTFeatures)featuresFromArray:(id)featuresArray;
++ (void)readStartupConfigurationFrom:(NSDictionary *)arguments andApplyTo:(WTStartupConfiguration *)configuration;
+
+@end

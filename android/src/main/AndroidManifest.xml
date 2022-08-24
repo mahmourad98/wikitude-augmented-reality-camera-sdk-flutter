@@ -1,3 +1,3 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:be3003912b5aedbe92abf52b53050c811d763dc857309b17bf0d8051569b6070
-size 123
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+  package="com.wikitude.wikitude_plugin">
+</manifest>

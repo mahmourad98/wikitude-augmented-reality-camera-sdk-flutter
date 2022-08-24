@@ -1,3 +1,34 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:59e8f82b9059209de6ca2fa747d4ae3015683300aee83a55e307b955a999656b
-size 1045
+/******************************************************************************
+ * File: RenderableCameraFrameBucket.hpp
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2018-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#ifndef RenderableCameraFrameBucket_h
+#define RenderableCameraFrameBucket_h
+
+#ifdef __cplusplus
+
+#include <functional>
+
+#include "Error.hpp"
+#include "CompilerAttributes.hpp"
+
+
+namespace wikitude::sdk {
+
+        class RenderableCameraFrame;
+        class WT_EXPORT_API RenderableCameraFrameBucket {
+        public:
+            virtual ~RenderableCameraFrameBucket() = default;
+            
+            virtual void getRenderableCameraFrameForId(long id_, std::function<void(RenderableCameraFrame&)> successHandler_, std::function<void(Error&)> errorHandler_) = 0;
+        };
+}
+
+#endif /* __cplusplus */
+
+#endif /* RenderableCameraFrameBuckett_h */

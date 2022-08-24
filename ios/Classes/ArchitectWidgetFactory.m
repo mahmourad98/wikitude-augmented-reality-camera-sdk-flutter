@@ -1,3 +1,42 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:83b5c5cbcd965eda1f5cf0387993ed0ec2bd7d67c4571af69d04bb31d0bf319d
-size 1149
+/******************************************************************************
+ * File: ArchitectWidgetFactory.m
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2019-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#import "ArchitectWidgetFactory.h"
+
+#import "ArchitectWidget.h"
+
+@interface ArchitectWidgetFactory()
+
+    @property NSObject<FlutterPluginRegistrar> *registrar;
+
+@end
+
+@implementation ArchitectWidgetFactory
+
+- (instancetype)initWithRegistrar:(NSObject<FlutterPluginRegistrar> *)registrar
+{
+    self = [super init];
+    if (self)
+    {
+        _registrar = registrar;
+    }
+    return self;
+}
+
+- (NSObject<FlutterMessageCodec>*)createArgsCodec
+{
+    return [FlutterStandardMessageCodec sharedInstance];
+}
+
+- (NSObject<FlutterPlatformView>*)createWithFrame:(CGRect)frame viewIdentifier:(int64_t)viewId arguments:(id _Nullable)args
+{
+    return [[ArchitectWidget alloc] initWithFrame:frame viewIdentifier:viewId arguments:args registrar:self.registrar];
+}
+
+@end

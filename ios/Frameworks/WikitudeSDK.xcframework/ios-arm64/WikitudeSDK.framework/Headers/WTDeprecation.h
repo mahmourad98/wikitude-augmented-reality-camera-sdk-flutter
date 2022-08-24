@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:e0cf2255e84d3c50f5a4a14c0b14c871d9e4467aba4ece61b56cf8dc4ee52814
-size 595
+/******************************************************************************
+ * File: WTDeprecation.h
+ * Copyright (c) 2021 Qualcomm Technologies, Inc. and/or its subsidiaries. All rights reserved.
+ *  2018-2021 Wikitude GmbH.
+ * 
+ * Confidential and Proprietary - Qualcomm Technologies, Inc.
+ *
+ ******************************************************************************/
+
+#ifndef WTDeprecation_h
+#define WTDeprecation_h
+
+#define WT_DEPRECATED_SINCE(__version__, __msg__) __attribute__((deprecated("Deprecated in Wikitude SDK " #__version__ ". " __msg__)))
+
+#endif /* WTDeprecation_h */
